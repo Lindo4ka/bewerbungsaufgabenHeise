@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /*
+            Normal flow
+            Wenn die Bildschirmgröße unter 800px liegt, sind die die container-div per default 
+            in der gewünschten Reihenfolge übereinander gestappelt. 
+            */
+            * {
+                box-sizing: border-box;
+            }
+
+            .container {
+                background-color: blanchedalmond;
+                width: 100%;
+                height: auto;
+                position: relative;
+                margin-bottom: 10px;
+            }
+            .balken {
+                width: 10px;
+                height: 100%;
+                position: absolute;
+                left: 0;
+            }
+            .content {
+                background-color: rgb(249, 249, 203);
+                width: auto;
+                height: auto;
+                padding: .5em;
+                padding-left: 1.5em;
+            }
+
+            /*
+            Flexible Box Layout
+            Mit dem Hinzufügen von Property display:flex zu wrap-Div bewirkt man, dass die Elemente (container-divs)
+            im Inneren wrap-Divs sich linksbündig in einer Reihe ausrichten. Zusätzlicher Vorteil ist, dass die Größe der aller container-Divs
+            sich dann an dem container-Divs mit längstem/größtem Inhalt automatisch ausrichtet.  
+            */
+            @media only screen and (min-width: 800px) {
+                .wrap {
+                    display: flex;
+                }
+
+                .container {
+                    width: 33%;
+                    min-height: auto;
+                    margin-right: 10px;
+                }
+
+                .content {
+                    width: auto;
+                    height: 100%;
+                    margin-bottom: 50px;
+                    padding: .5em;
+                    padding-left: 1.5em;
+                }
+
+                .footnote {
+                    position: absolute;
+                    bottom: 10px;
+                }
+            }
+            /*
+            Positioned Layout
+            Für die Ausrichtung des vertikalen Balken und der Fußnotiz wurde der container-div mit der Property position: relativ versehen.
+            So können die darin enthaltene Elemente mithilfe von position: absolute und den Properties bottom bzw. left in die gewünschte Position
+            gebracht werden.
+            */          
+
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+
+            <div class="container">
+                <div class="balken" style="background-color: rgb(134, 196, 225);"></div>
+                <div class="content">
+                    <h2>A Headline</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                    <p class="footnote">Footnote</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="balken" style="background-color: rgb(6, 43, 57);"></div>
+                <div class="content">
+                    <h2>Something new</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                    <p class="footnote">Footnote</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="balken" style="background-color: rgb(253, 122, 5);"></div>
+                <div class="content">
+                    <h2>What happened next ??</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                    <p class="footnote">Footnote</p>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

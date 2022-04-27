@@ -1,0 +1,45 @@
+###### 3.5 CSS Box Modell ######
+
+Laut der CSS-Logik befindet sich jedes Element in einer Box. Diese Box besteht aus vier Bereichen 
+in folgender Reihenfolge: Inhalt des Elements, Padding, Border, Margin. 
+
+Mit Padding kann der Innenabstand reguliert werden. 
+Border ist der Rand, der den Inhalt und Padding umschließt. 
+Margin reguliert die Außenabstände eines Elements.
+
+##########################################################################################################
+##########################################################################################################
+
+###### 3.4 Styling mit Tailwind vs. Sass ######
+
+### SASS VORTEILE ###
+
+- Bessere Übersicht und leichtere Verwaltung der Elemente als mit CSS
+- Erweiterte Funktionalitäten (Nesting, Erstellung von Variablen, Schleifen...)
+
+
+### SASS NACHTEILE ###
+- SASS wird von Browsern nicht unterstüzt. Der Code muss zuerst kompeliert werden. Dadurch eventuell längere Verarbeitungszeit.
+
+###################################################
+
+### Tailwind VORTEILE ###
+
+- Vordifinierte Klassen, die direkt ins Html geschrieben werden können, dadurch sehr praktisch (Utility-First)
+- Leicht anpassbar
+
+
+### Tailwind NACHTEILE ###
+
+- Da alle Stile in der HTML-Datei festgehalten werden, kann der Code unübersichtlich werden
+
+###################################################
+
+### WESENTLICHE UNTERSCHIEDE ###
+
+SASS ist eine Art Erweiterung bzw. Präprozessor von CSS.
+
+Teilwind ist ein CSS-Framework, basiert also auf einer Sammlung von Libraries
+
+
+

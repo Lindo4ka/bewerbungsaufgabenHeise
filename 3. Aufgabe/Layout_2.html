@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /*
+            Normal Flow
+            Die Divs befinden sich ohne Manipulationen in richtiger Ordnung .
+            */
+            header, nav, #content, #sidebar, footer {
+                background-color: rgb(212, 206, 206);
+                padding: 10px; 
+                margin: 5px;
+            }
+            /*
+            Flexible Box Layout
+            Der div, in dem sich Navigation, Content und Sidebar befinden, wurde mit der Property display: flex versehen, 
+            damit Navigation, Content und Sidebar sich linksbündig in einer Reihe ausrichten. 
+            Mithilfe von flex-grow kann gesteuert werden, wie sich das jeweilige Element bei der Vergrößerung des Bildschirms 
+            den Raum im Container aufteilt.
+            */
+            @media only screen and (min-width: 780px) {
+                #container {
+                    display: flex;
+                }
+                nav {
+                    min-width: 130px;
+                    flex-grow: 1
+                }
+                #sidebar {
+                    min-width: 110px;
+                    flex-grow: 1
+                }
+                #content {
+                    flex-grow: 5
+                }
+                footer {
+                    width: calc(100% - 130px - 110px - 90px);
+                    margin-left: 165px;
+                }
+            }
+            
+        </style>         
+    </head>
+    <body>
+        <header>Header</header>
+            <div id="container">
+                <nav>Navigation</nav>
+                <div id="content">
+                    <h1>Content</h1>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div id="sidebar">Sidebar</div>
+            </div>
+        <footer>Footer</footer>
+    </body>
+</html>

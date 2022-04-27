@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                font-family: sans-serif;
+            }
+            body {
+                background-color: #F8F8F8;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+        /**** Header ****/
+            #header {
+                background: linear-gradient(to left,  #778899 87%, #ffffff 100%);
+                width: 100%;
+                height: 4em;
+                display: flex;
+            }
+            #logo {
+                width: 4em;
+                height: 100%;
+                background-color: #778899;
+                text-align: center;
+                color: white;
+            }
+            #logo p {
+                font-size: 2.25em;
+                font-weight: 900;
+                font-family: 'Courier New', monospace;
+            }
+            #linie {
+                width: .2em;
+                height: 100%;
+                background-color: #778899;
+                margin-right: .5em;
+            }
+            #linie:first-child{
+                margin-left: 1em;
+            }
+
+
+        /*****Nachrichten*****/          
+            #container {
+                width: 70%;
+                height: auto;
+                margin: auto;
+                background-color: white;
+                display: flex;
+            }
+            .containerNews {
+                border-radius: 2px;
+                width: 100%;
+                margin-top: 1.5%;
+                margin-bottom: 1.5%;
+                background-color: white;
+                box-shadow: 0 0 7px 0 #666699;
+                cursor: pointer;
+            }
+            #divBild, img {
+                width: 100%;
+                height: auto;
+            }
+            .divText {
+                padding: 5px; 
+                transition: 250ms;
+            }
+            .divText:hover{
+                background-color: rgb(255, 255, 255);
+                transform: translateY(-30px);
+            }
+            .divText p {
+                color: #404040; 
+                text-align: justify; 
+            }
+            h3 {
+                margin-bottom: 18px;
+                transition: color .25s;
+            }
+            h3:hover {
+                color: blue;
+            }
+            #container_aussen{
+                flex: 1;
+            }  
+            footer {
+                width: 100%;
+                height: 3em;
+                background-color: #867595;
+                bottom: 0;
+            }
+
+        /***** Wetter*****/
+            #divWeatherHTML {
+                background-color: rgb(6, 6, 6);
+                opacity: 80%;
+                width: 70%;
+                height: auto;;
+                color: white;
+                padding: 1em;
+                border-radius: 2px;
+                margin: auto;
+            }
+            #Stadt {
+                font-size: 1.5em;
+            }
+            #feels_like {
+                font-size: small;
+            }
+            #icon {
+                width: 20%;
+                vertical-align: middle;
+                margin-top: 1%;
+            }
+            #description {
+                width: 80%;
+                font-size: larger;
+                float: right;
+                margin-top: 10%;
+            }
+            #temp {
+                font-size: 63px;
+            }
+            #Werbung {
+                border-radius: 2px;
+                margin: auto;
+                background-color: #867595;
+                opacity: 80%;
+                width: 70%;
+                color: white;
+                padding: 1em;
+            }
+
+            @media only screen and (max-width: 900px){
+                #container {
+                    flex-direction: column;
+                }
+            }            
+
+            @media only screen and (min-width: 900px){
+                #container {
+                    margin-left: 5%;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                }
+                .containerNews {
+                    width: 30%;
+                }
+                #divWeatherHTML{
+                    width: 15%;
+                    margin-top: 1.5%;
+                    margin-right: 5%;
+                    float: right;                
+                }
+                #Werbung {
+                    margin-top: 1em;
+                    margin-right: 5%;
+                    float: right;
+                    clear: both;
+                    min-width: 15%;
+                    width: 15%;       
+                }
+            }
+        </style>
+                <script src="wetterAPI.js"></script>       
+                <script src="fetchAPI.js"></script> 
+    </head>
+    <body>
+        <div id="header">
+            <div id="linie"></div>
+            <div id="linie"></div>
+            <div id="linie"></div>            
+            <div id="logo"><p>H</p> online</div>
+        </div>
+        <div id="container_aussen">
+            <div id="Wetter"></div>
+            <div id="Werbung">Hier könnte Ihre Werbung stehen</div>
+            <div id="container"></div>
+        </div>
+        <footer></footer>   
+    </body>
+</html>
